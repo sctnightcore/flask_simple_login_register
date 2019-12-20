@@ -1,0 +1,3 @@
+"""
+Path of tests/functional
+"""
