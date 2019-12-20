@@ -1,0 +1,6 @@
+Flask
+Flask-Dance
+Flask-WTF
+pytest
+pytest-flask
+WTForms
