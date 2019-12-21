@@ -5,12 +5,11 @@ from views.api import api_blueprint
 def create_app():
 	app = Flask(__name__)
 	app.config.from_object("settings.Config")
-	 #router
+	#router
 	app.register_blueprint(router_blueprint, url_prefix="/")
-	 #api
+	#api
 	app.register_blueprint(api_blueprint, url_prefix="/api")
 	return app
-
 
 
 if __name__ == "__main__":

@@ -10,9 +10,20 @@ def index():
 @router_blueprint.route("/login", methods=["GET", "POST"])
 def login():
 	form = LoginForm()
+	if form.validate_on_submit():
+		# login to web
+		return redirect(url_for(".dashboard"))
 	return render_template("login.html",form=form)
 
 @router_blueprint.route("/register", methods=["GET", "POST"])
 def register():
 	form = RegisterForm()
 	return render_template("register.html", form=form)
+
+@router_blueprint.route("/dashboard", methods=["GET", "POST"])
+def dashboard():
+    return render_template("dashboard.html")
+
+@router_blueprint.route("/logout", methods=["GET", "POST"])
+def logout():
+	return redirect(url_for(".index"))
